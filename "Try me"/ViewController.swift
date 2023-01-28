@@ -9,13 +9,11 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    
+    //перед
+    //функц с названием тест в начале - тестируемая функция (появляется ромбик)
+    //для теста нужно создать экземпляр класса в тесте и @testable import название приложения
     func bool (_ v:Bool) -> String {
       return "\(v)"
-    }
-   
-    func gettingNumber (_ num2:Int, _ num1:Int) -> Int {
-        num1 * num2
     }
     
     func multArray (_ a: [Int]) -> Int {
@@ -27,7 +25,11 @@ class ViewController: UIViewController {
     }
     
     func overloaded (_ a: Double, _ b:Double) -> Double {
-        return a * b
+        var c = a * b
+        c += 0.0005
+        let d = String(format: "%.2f", c)
+        let res: Double = Double(d) ?? 0
+        return res
     }
     
     func overloaded (_ a: Int, _ b:Int) -> Int {
@@ -44,7 +46,7 @@ class ViewController: UIViewController {
        
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        print(overloaded(4.3, -5.7))
     }
 
 }

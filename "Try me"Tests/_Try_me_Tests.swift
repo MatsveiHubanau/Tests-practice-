@@ -24,16 +24,39 @@ final class _Try_me_Tests: XCTestCase {
         let outputed = vc.bool(true)
         XCTAssertTrue(expectations == outputed)
     }
+    
+    func testString2 () {
+        let expectations = "true"
+        let outputed = vc.bool(true)
+        XCTAssertTrue(expectations == outputed)
+    }
 
-    func testMultArray () {
+    func testOverloadedInt () {
         let expectations = 56
         let outputed = vc.overloaded(7, 8)
         XCTAssertTrue(expectations == outputed)
     }
     
+    func testOverloadedInt2 () {
+        let expectations = -56
+        let outputed = vc.overloaded(7, -8)
+        XCTAssertTrue(expectations == outputed)
+    }
+    func testOverloadedInt3 () {
+        let expectations = 0
+        let outputed = vc.overloaded(7, 0)
+        XCTAssertTrue(expectations == outputed)
+    }
+    
     func testOverloadedDouble () {
-        let expectations = 4.3 * 5.7
+        let expectations = 24.51
         let outputed = vc.overloaded(4.3, 5.7)
+        XCTAssertTrue(expectations == outputed)
+    }
+    
+    func testOverloadedDouble2 () {
+        let expectations = -24.51
+        let outputed = vc.overloaded(4.3, -5.7)
         XCTAssertTrue(expectations == outputed)
     }
     
